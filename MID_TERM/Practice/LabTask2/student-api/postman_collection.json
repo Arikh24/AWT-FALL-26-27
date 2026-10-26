@@ -1,0 +1,149 @@
+{
+  "info": {
+    "name": "Student Management API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. POST Department",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://localhost:5001/departments",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Computer Science and Engineering\",\n  \"code\": \"CSE\",\n  \"description\": \"Software, networks and AI\"\n}"
+        }
+      }
+    },
+    {
+      "name": "2. POST Student",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://localhost:5001/students",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"firstName\": \"Arif\",\n  \"lastName\": \"Khan\",\n  \"email\": \"arif.khan@student.edu\",\n  \"phone\": \"+8801711111111\",\n  \"dateOfBirth\": \"2002-05-14\",\n  \"departmentId\": 1\n}"
+        }
+      }
+    },
+    {
+      "name": "3. POST Course",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://localhost:5001/courses",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Advanced Web Technologies\",\n  \"code\": \"CSE3101\",\n  \"credits\": 3,\n  \"description\": \"NestJS and REST APIs\",\n  \"departmentId\": 1\n}"
+        }
+      }
+    },
+    {
+      "name": "4. GET Departments",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://localhost:5001/departments"
+      }
+    },
+    {
+      "name": "5. GET Students",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://localhost:5001/students"
+      }
+    },
+    {
+      "name": "6. GET Courses",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://localhost:5001/courses"
+      }
+    },
+    {
+      "name": "7. INVALID Department (empty name) -> 400",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://localhost:5001/departments",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"\",\n  \"code\": \"EEE\",\n  \"description\": \"x\"\n}"
+        }
+      }
+    },
+    {
+      "name": "8. INVALID Student (empty firstName) -> 400",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://localhost:5001/students",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"firstName\": \"\",\n  \"lastName\": \"K\",\n  \"email\": \"a@b.com\",\n  \"phone\": \"1\",\n  \"dateOfBirth\": \"2002-05-14\",\n  \"departmentId\": 1\n}"
+        }
+      }
+    },
+    {
+      "name": "9. INVALID Course (empty code) -> 400",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://localhost:5001/courses",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"X\",\n  \"code\": \"\",\n  \"credits\": 3,\n  \"description\": \"d\",\n  \"departmentId\": 1\n}"
+        }
+      }
+    }
+  ]
+}
